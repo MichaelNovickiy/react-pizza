@@ -1,0 +1,203 @@
+.inactive {
+  display: none;
+}
+
+body {
+  background-color: #fcdf8c;
+  font-family: "Montserrat", sans-serif;
+}
+
+header {
+  margin-top: 40px;
+}
+
+.container {
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 0 70px 0 50px;
+  background-color: white;
+}
+
+.header_radius {
+  border-radius: 10px 10px 0 0;
+}
+
+.all-items_radius {
+  border-radius: 0 0 10px 10px;
+}
+
+.header {
+  padding: 50px 0 40px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.header::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  bottom: 0;
+  background-color: #f1f1f1;
+}
+.header .header__title-block {
+  display: flex;
+}
+.header .header__title-block .header__logo {
+  width: 38px;
+  height: 38px;
+  background: url(../images/logo.png) no-repeat;
+  margin: 5px 17px 0 0;
+}
+.header .header__title-block .header__title {
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 29px;
+  letter-spacing: 0.01em;
+  color: #181818;
+}
+.header .header__title-block .header__subtitle {
+  line-height: 19px;
+  color: #7B7B7B;
+}
+
+.cart-block {
+  padding-bottom: 40px;
+}
+.cart-block .container {
+  padding-top: 40px;
+}
+.cart-block .cart__container {
+  width: 821px;
+  margin: 0 auto;
+}
+.cart-block .cart .cart__title-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30px;
+}
+.cart-block .cart .cart__title {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  letter-spacing: 0.01em;
+}
+.cart-block .cart .cart__title i {
+  padding: 5px;
+}
+.cart-block .cart .cart__trash {
+  line-height: 19px;
+  color: #B6B6B6;
+  cursor: pointer;
+}
+.cart-block .cart .cart__trash i {
+  padding: 5px;
+}
+.cart-block .cart .cart-items .cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 27px;
+  letter-spacing: 0.01em;
+  padding-top: 30px;
+  position: relative;
+}
+.cart-block .cart .cart-items .cart-item::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  top: 0;
+  background-color: #f1f1f1;
+}
+.cart-block .cart .cart-items .cart-item .width-block {
+  width: 400px;
+  display: flex;
+  align-items: center;
+}
+.cart-block .cart .cart-items .cart-item .width-block .cart-item__img {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+}
+.cart-block .cart .cart-items .cart-item .width-block .cart-item__title span {
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.01em;
+  color: #8D8D8D;
+}
+.cart-block .cart .cart-items .cart-item .cart-item__amount span {
+  border: 1px solid #FE5F1E;
+  color: #FE5F1E;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  vertical-align: middle;
+}
+.cart-block .cart .cart-items .cart-item .cart-item__amount .amount {
+  border: none;
+  color: inherit;
+  margin: 0 10px;
+  cursor: auto;
+  display: inline-block;
+  width: 12px;
+}
+.cart-block .cart .cart-items .cart-item .cart-item__remove span {
+  border: 1px solid #8D8D8D;
+  color: #8D8D8D;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  vertical-align: middle;
+  padding-top: 1px;
+}
+.cart-block .cart .cart-description {
+  padding-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 22px;
+  line-height: 27px;
+  letter-spacing: 0.01em;
+}
+.cart-block .cart .cart-description .cart-description__amount span {
+  font-weight: 700;
+}
+.cart-block .cart .cart-description .cart-description__price span {
+  font-weight: 700;
+  color: #FE5F1E;
+}
+.cart-block .cart .cart-buttons {
+  padding: 40px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 0.01em;
+}
+.cart-block .cart .cart-buttons button {
+  font-size: 14px;
+  height: 45px;
+  border-radius: 25px;
+  padding: 0 20px;
+  color: white;
+  background-color: #FE5F1E;
+}
+.cart-block .cart .cart-buttons .cart-buttons_back {
+  border: 1px solid #8D8D8D;
+  background-color: inherit;
+  color: #8D8D8D;
+}
+.cart-block .cart .cart-buttons .cart-buttons_back span {
+  margin-right: 5px;
+}
+
+/*# sourceMappingURL=order.css.map */
