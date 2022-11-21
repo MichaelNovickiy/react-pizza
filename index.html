@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React Pizza</title>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="container header_radius">
+        <div class="header">
+            <div class="header__title-block">
+                <div class="header__logo"></div>
+                <div>
+                    <h1 class="header__title">REACT PIZZA</h1>
+                    <div class="header__subtitle">самая вкусная пицца во вселенной</div>
+                </div>
+            </div>
+            <button class="header__button">
+                <span class="header__price">520 <i class="fa-solid fa-ruble-sign"></i></span>
+                <span class="header__cart"><i class="fa-solid fa-cart-shopping"></i> 3</span>
+            </button>
+        </div>
+    </div>
+</header>
+<section>
+    <div class="container">
+        <div class="sort">
+            <div class="sort__buttons">
+                <button class="sort__button sort__button_active">Все</button>
+                <button class="sort__button">Мясные</button>
+                <button class="sort__button">Вегетарианская</button>
+                <button class="sort__button">Гриль</button>
+                <button class="sort__button">Острые</button>
+                <button class="sort__button">Закрытые</button>
+            </div>
+            <div class="sort__default">
+                <i class="fa-solid fa-caret-up"></i> Сортировка по:
+                <button>популярности</button>
+                <div class="sort__popup inactive">
+                    <div class="sort__popup_active"><span>популярности</span></div>
+                    <div><span>по цене</span></div>
+                    <div><span>по алфавиту</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container all-items_radius">
+        <div class="all-items">
+            <h2 class="all-items__title">
+                Все пиццы
+            </h2>
+            <div class="pizzas">
+                <div class="pizza-card">
+                    <div class="pizza-card__image"></div>
+                    <div class="pizza-card__title">Чизбургер-пицца</div>
+                    <div class="pizza-card__settings">
+                        <div class="pizza-card__settings-dough">
+                            <span class="pizza-card__settings_active">тонкое</span>
+                            <span>традиционное</span>
+                        </div>
+                        <div class="pizza-card__settings-size">
+                            <span class="pizza-card__settings_active">26 см.</span>
+                            <span>30 см.</span>
+                            <span>40 см.</span>
+                        </div>
+                    </div>
+                    <div class="pizza-card__bottom-block">
+                        <div class="pizza-card__price">от 395 ₽</div>
+                        <button class="pizza-card__button">
+                            <i class="fa-solid fa-plus"></i>
+                            Добавить
+                            <span>2</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="https://kit.fontawesome.com/840e33af04.js" crossorigin="anonymous"></script>
+</body>
+</html>

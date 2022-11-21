@@ -1,0 +1,227 @@
+.inactive {
+  display: none;
+}
+
+body {
+  background-color: #fcdf8c;
+  font-family: "Montserrat", sans-serif;
+}
+
+header {
+  margin-top: 40px;
+}
+
+.container {
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 0 70px 0 50px;
+  background-color: white;
+}
+
+.header_radius {
+  border-radius: 10px 10px 0 0;
+}
+
+.all-items_radius {
+  border-radius: 0 0 10px 10px;
+}
+
+.header {
+  padding: 50px 0 40px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.header::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  bottom: 0;
+  background-color: #f1f1f1;
+}
+.header .header__title-block {
+  display: flex;
+}
+.header .header__title-block .header__logo {
+  width: 38px;
+  height: 38px;
+  background: url(../images/logo.png) no-repeat;
+  margin: 5px 17px 0 0;
+}
+.header .header__title-block .header__title {
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 29px;
+  letter-spacing: 0.01em;
+  color: #181818;
+}
+.header .header__title-block .header__subtitle {
+  line-height: 19px;
+  color: #7B7B7B;
+}
+.header .header__button {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  width: 150px;
+  background-color: #FE5F1E;
+  border-radius: 50px;
+  color: white;
+  font-weight: 700;
+  line-height: 19px;
+}
+.header .header__button .header__price {
+  position: relative;
+  padding-right: 26px;
+}
+.header .header__button .header__price::before {
+  content: "";
+  left: 60px;
+  top: -3px;
+  position: absolute;
+  height: 27px;
+  width: 1px;
+  background-color: white;
+}
+
+.sort {
+  padding-top: 40px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.015em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sort .sort__buttons .sort__button {
+  padding: 14px 25px;
+  background-color: #f1f1f1;
+  border-radius: 25px;
+  margin: 0 4px;
+  font-weight: 700;
+  letter-spacing: 0.015em;
+}
+.sort .sort__buttons .sort__button_active {
+  background-color: #282828;
+  color: white;
+}
+.sort .sort__default {
+  position: relative;
+}
+.sort .sort__default i {
+  vertical-align: middle;
+}
+.sort .sort__default button {
+  color: #FE5F1E;
+  font-weight: 400;
+  text-decoration: underline dotted #FE5F1E;
+  text-underline-offset: 5px;
+}
+.sort .sort__default .sort__popup {
+  width: 140px;
+  top: 30px;
+  right: 0;
+  position: absolute;
+  padding: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 1px rgba(105, 97, 97, 0.2);
+  font-size: 14px;
+  letter-spacing: 0.015em;
+  background-color: #ffffff;
+}
+.sort .sort__default .sort__popup .sort__popup_active {
+  color: #FE5F1E;
+  background-color: #fef7f4;
+}
+.sort .sort__default .sort__popup div {
+  padding: 10px 14px;
+}
+.sort .sort__default .sort__popup div span {
+  cursor: pointer;
+}
+
+.all-items .all-items__title {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  letter-spacing: 0.01em;
+  padding-top: 32px;
+}
+.all-items .pizzas .pizza-card {
+  width: 280px;
+  margin: 35px 17px;
+  padding-bottom: 35px;
+}
+.all-items .pizzas .pizza-card .pizza-card__image {
+  margin: 0 auto;
+  width: 260px;
+  height: 260px;
+  background: url("../images/pizza-chiz.png") no-repeat;
+}
+.all-items .pizzas .pizza-card .pizza-card__title {
+  margin-top: 11px;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+.all-items .pizzas .pizza-card__settings {
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  padding: 7px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.015em;
+}
+.all-items .pizzas .pizza-card__settings .pizza-card__settings_active {
+  background-color: white;
+}
+.all-items .pizzas .pizza-card__settings .pizza-card__settings-dough span {
+  display: inline-block;
+  width: 130px;
+  text-align: center;
+  padding: 6px 0;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.all-items .pizzas .pizza-card__settings .pizza-card__settings-size {
+  margin-top: 7px;
+}
+.all-items .pizzas .pizza-card__settings .pizza-card__settings-size span {
+  display: inline-block;
+  width: 85px;
+  text-align: center;
+  padding: 6px 0;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.all-items .pizzas .pizza-card__bottom-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 17px;
+}
+.all-items .pizzas .pizza-card__bottom-block .pizza-card__price {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 27px;
+  letter-spacing: 0.015em;
+}
+.all-items .pizzas .pizza-card__bottom-block .pizza-card__button {
+  border: 1px solid #FE5F1E;
+  border-radius: 25px;
+  padding: 11px;
+  color: #FE5F1E;
+}
+.all-items .pizzas .pizza-card__bottom-block .pizza-card__button span {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #FE5F1E;
+  border-radius: 50%;
+  color: white;
+}
+
+/*# sourceMappingURL=index.css.map */
