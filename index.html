@@ -24,13 +24,13 @@
                 </div>
             </div>
             <button class="header__button">
-                <span class="header__price">520 <i class="fa-solid fa-ruble-sign"></i></span>
+                <span class="header__price">520 ₽</span>
                 <span class="header__cart"><i class="fa-solid fa-cart-shopping"></i> 3</span>
             </button>
         </div>
     </div>
 </header>
-<section>
+<section class="sort-block">
     <div class="container">
         <div class="sort">
             <div class="sort__buttons">
@@ -53,7 +53,7 @@
         </div>
     </div>
 </section>
-<section>
+<section class="all-items-block">
     <div class="container all-items_radius">
         <div class="all-items">
             <h2 class="all-items__title">
@@ -61,28 +61,207 @@
             </h2>
             <div class="pizzas">
                 <div class="pizza-card">
-                    <div class="pizza-card__image"></div>
+                    <div class="pizza-card__image">
+                        <img src="./images/pizza-chiz.png" alt="pizza">
+                    </div>
                     <div class="pizza-card__title">Чизбургер-пицца</div>
                     <div class="pizza-card__settings">
                         <div class="pizza-card__settings-dough">
-                            <span class="pizza-card__settings_active">тонкое</span>
+                            <span class="active">тонкое</span>
                             <span>традиционное</span>
                         </div>
                         <div class="pizza-card__settings-size">
-                            <span class="pizza-card__settings_active">26 см.</span>
+                            <span class="active">26 см.</span>
                             <span>30 см.</span>
                             <span>40 см.</span>
                         </div>
                     </div>
                     <div class="pizza-card__bottom-block">
                         <div class="pizza-card__price">от 395 ₽</div>
-                        <button class="pizza-card__button">
+                        <button class="pizza-card__button active">
                             <i class="fa-solid fa-plus"></i>
                             Добавить
-                            <span>2</span>
+                            <span class="pizza-card__button_amount">2</span>
                         </button>
                     </div>
                 </div>
+
+                <div class="pizza-card">
+                    <div class="pizza-card__image">
+                        <img src="./images/pizza-cheese.png" alt="pizza">
+                    </div>
+                    <div class="pizza-card__title">Сырная</div>
+                    <div class="pizza-card__settings">
+                        <div class="pizza-card__settings-dough">
+                            <span class="active">тонкое</span>
+                            <span>традиционное</span>
+                        </div>
+                        <div class="pizza-card__settings-size">
+                            <span class="active">26 см.</span>
+                            <span>30 см.</span>
+                            <span>40 см.</span>
+                        </div>
+                    </div>
+                    <div class="pizza-card__bottom-block">
+                        <div class="pizza-card__price">от 450 ₽</div>
+                        <button class="pizza-card__button active">
+                            <i class="fa-solid fa-plus"></i>
+                            Добавить
+                        </button>
+                    </div>
+                </div>
+
+                <div class="pizza-card">
+                    <div class="pizza-card__image">
+                        <img src="./images/pizza-shrimp.png" alt="pizza">
+                    </div>
+                    <div class="pizza-card__title">Креветки по-азиатски</div>
+                    <div class="pizza-card__settings">
+                        <div class="pizza-card__settings-dough">
+                            <span class="active">тонкое</span>
+                            <span>традиционное</span>
+                        </div>
+                        <div class="pizza-card__settings-size">
+                            <span>26 см.</span>
+                            <span class="active">30 см.</span>
+                            <span>40 см.</span>
+                        </div>
+                    </div>
+                    <div class="pizza-card__bottom-block">
+                        <div class="pizza-card__price">от 290 ₽</div>
+                        <button class="pizza-card__button">
+                            <i class="fa-solid fa-plus"></i>
+                            Добавить
+                        </button>
+                    </div>
+                </div>
+
+                <div class="pizza-card">
+                    <div class="pizza-card__image">
+                        <img src="./images/pizza-chicken.png" alt="pizza">
+                    </div>
+                    <div class="pizza-card__title">Сырный цыпленок</div>
+                    <div class="pizza-card__settings">
+                        <div class="pizza-card__settings-dough">
+                            <span>тонкое</span>
+                            <span class="active">традиционное</span>
+                        </div>
+                        <div class="pizza-card__settings-size">
+                            <span>26 см.</span>
+                            <span class="active">30 см.</span>
+                            <span>40 см.</span>
+                        </div>
+                    </div>
+                    <div class="pizza-card__bottom-block">
+                        <div class="pizza-card__price">от 330 ₽</div>
+                        <button class="pizza-card__button">
+                            <i class="fa-solid fa-plus"></i>
+                            Добавить
+                        </button>
+                    </div>
+                </div>
+
+                <div class="pizza-card">
+                    <div class="pizza-card__image">
+                        <img src="./images/pizza-chiz.png" alt="pizza">
+                    </div>
+                    <div class="pizza-card__title">Чизбургер-пицца</div>
+                    <div class="pizza-card__settings">
+                        <div class="pizza-card__settings-dough">
+                            <span class="active">тонкое</span>
+                            <span>традиционное</span>
+                        </div>
+                        <div class="pizza-card__settings-size">
+                            <span class="active">26 см.</span>
+                            <span>30 см.</span>
+                            <span>40 см.</span>
+                        </div>
+                    </div>
+                    <div class="pizza-card__bottom-block">
+                        <div class="pizza-card__price">от 395 ₽</div>
+                        <button class="pizza-card__button active">
+                            <i class="fa-solid fa-plus"></i>
+                            Добавить
+                            <span class="pizza-card__button_amount">2</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="pizza-card">
+                    <div class="pizza-card__image">
+                        <img src="./images/pizza-cheese.png" alt="pizza">
+                    </div>
+                    <div class="pizza-card__title">Сырная</div>
+                    <div class="pizza-card__settings">
+                        <div class="pizza-card__settings-dough">
+                            <span class="active">тонкое</span>
+                            <span>традиционное</span>
+                        </div>
+                        <div class="pizza-card__settings-size">
+                            <span class="active">26 см.</span>
+                            <span>30 см.</span>
+                            <span>40 см.</span>
+                        </div>
+                    </div>
+                    <div class="pizza-card__bottom-block">
+                        <div class="pizza-card__price">от 450 ₽</div>
+                        <button class="pizza-card__button active">
+                            <i class="fa-solid fa-plus"></i>
+                            Добавить
+                        </button>
+                    </div>
+                </div>
+
+                <div class="pizza-card">
+                    <div class="pizza-card__image">
+                        <img src="./images/pizza-shrimp.png" alt="pizza">
+                    </div>
+                    <div class="pizza-card__title">Креветки по-азиатски</div>
+                    <div class="pizza-card__settings">
+                        <div class="pizza-card__settings-dough">
+                            <span class="active">тонкое</span>
+                            <span>традиционное</span>
+                        </div>
+                        <div class="pizza-card__settings-size">
+                            <span>26 см.</span>
+                            <span class="active">30 см.</span>
+                            <span>40 см.</span>
+                        </div>
+                    </div>
+                    <div class="pizza-card__bottom-block">
+                        <div class="pizza-card__price">от 290 ₽</div>
+                        <button class="pizza-card__button">
+                            <i class="fa-solid fa-plus"></i>
+                            Добавить
+                        </button>
+                    </div>
+                </div>
+
+                <div class="pizza-card">
+                    <div class="pizza-card__image">
+                        <img src="./images/pizza-chicken.png" alt="pizza">
+                    </div>
+                    <div class="pizza-card__title">Сырный цыпленок</div>
+                    <div class="pizza-card__settings">
+                        <div class="pizza-card__settings-dough">
+                            <span>тонкое</span>
+                            <span class="active">традиционное</span>
+                        </div>
+                        <div class="pizza-card__settings-size">
+                            <span>26 см.</span>
+                            <span class="active">30 см.</span>
+                            <span>40 см.</span>
+                        </div>
+                    </div>
+                    <div class="pizza-card__bottom-block">
+                        <div class="pizza-card__price">от 330 ₽</div>
+                        <button class="pizza-card__button">
+                            <i class="fa-solid fa-plus"></i>
+                            Добавить
+                        </button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
