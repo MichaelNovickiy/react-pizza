@@ -1,0 +1,55 @@
+@import "./src/styles/variables";
+
+.cart-is-empty-block {
+  padding-bottom: 40px;
+
+  .container {
+    padding: 40px 0;
+  }
+
+  .cart__container {
+    width: 821px;
+    margin: 0 auto;
+
+    .cart-is-empty {
+      width: 550px;
+      margin: 0 auto;
+      text-align: center;
+
+      .cart-is-empty__title {
+        margin-top: 50px;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 39px;
+        letter-spacing: 0.01em;
+      }
+
+      .cart-is-empty__description {
+        margin-top: 10px;
+        font-size: 18px;
+        line-height: 26px;
+        text-align: center;
+        letter-spacing: 0.01em;
+        color: #777777;
+      }
+
+      .cart-is-empty__img {
+        margin: 30px auto 0;
+        height: 255px;
+        width: 300px;
+      }
+
+      .cart-is-empty__back {
+        margin-top: 30px;
+        font-size: 14px;
+        height: 45px;
+        border-radius: 25px;
+        padding: 0 20px;
+        color: white;
+        background-color: #262626;
+      }
+    }
+  }
+
+
+}

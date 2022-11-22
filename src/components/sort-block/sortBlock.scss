@@ -1,0 +1,70 @@
+@import "./src/styles/variables";
+
+.sort-block {
+  .sort {
+    padding-top: 40px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.015em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .sort__buttons {
+      .sort__button {
+        padding: 14px 25px;
+        background-color: $color-grey;
+        border-radius: 25px;
+        margin: 0 4px;
+        font-weight: 700;
+        letter-spacing: 0.015em;
+      }
+
+      .sort__button_active {
+        background-color: #282828;
+        color: white;
+      }
+    }
+
+    .sort__default {
+      position: relative;
+
+      i {
+        vertical-align: middle;
+      }
+
+      button {
+        color: $color-primary;
+        font-weight: 400;
+        text-decoration: underline dotted $color-primary;
+        text-underline-offset: 5px;
+      }
+
+      .sort__popup {
+        width: 140px;
+        top: 30px;
+        right: 0;
+        position: absolute;
+        padding: 10px 0;
+        border-radius: 10px;
+        box-shadow: 0 0 5px 1px rgba(105, 97, 97, 0.2);
+        font-size: 14px;
+        letter-spacing: 0.015em;
+        background-color: #ffffff;
+
+        .sort__popup_active {
+          color: $color-primary;
+          background-color: #fef7f4;
+        }
+
+        div {
+          padding: 10px 14px;
+
+          span {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
