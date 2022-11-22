@@ -1,5 +1,5 @@
 import React from "react";
-import "./cartBlock.scss";
+import "./CartBlock.scss";
 import "../../styles/basic.scss";
 
 const CartBlock = () => {

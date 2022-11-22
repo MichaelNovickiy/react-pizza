@@ -1,5 +1,5 @@
 import React from "react";
-import "./cartEmpty.scss";
+import "./CartEmpty.scss";
 import "../../styles/basic.scss";
 
 const CartEmpty = () => {

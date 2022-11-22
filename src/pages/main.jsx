@@ -1,13 +1,17 @@
 import React from "react";
-import Header from "../components/header";
-import SortBlock from "../components/sort-block";
-import AllItems from "../components/all-items";
+import Header from "../components/Header";
+import SortBlock from "../components/SortBlock";
+import AllItems from "../components/AllItems";
 
 const Main = () => {
+
+    const sortItems = ["Мясные", "Вегетарианская",
+        "Гриль", "Острые", "Закрытые"]
+
     return (
         <div>
             <Header/>
-            <SortBlock/>
+            <SortBlock sortItems={sortItems}/>
             <AllItems/>
         </div>
     );

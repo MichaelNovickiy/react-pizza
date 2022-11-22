@@ -11,34 +11,46 @@
     align-items: center;
 
     .sort__buttons {
-      .sort__button {
+      display: flex;
+
+      li {
         padding: 14px 25px;
         background-color: $color-grey;
         border-radius: 25px;
         margin: 0 4px;
         font-weight: 700;
         letter-spacing: 0.015em;
+        cursor: pointer;
       }
 
-      .sort__button_active {
+      .active {
         background-color: #282828;
         color: white;
+        transition: background-color ease 0.5s ;
       }
     }
 
     .sort__default {
       position: relative;
+      width: 250px;
 
       i {
         vertical-align: middle;
+        transition: transform linear 0.3s;
+      }
+
+      .turn {
+        transform: rotateX(180deg);
       }
 
       button {
         color: $color-primary;
+        margin-left: 5px;
         font-weight: 400;
         text-decoration: underline dotted $color-primary;
         text-underline-offset: 5px;
       }
+
 
       .sort__popup {
         width: 140px;
@@ -52,7 +64,11 @@
         letter-spacing: 0.015em;
         background-color: #ffffff;
 
-        .sort__popup_active {
+        &_none {
+          display: none;
+        }
+
+        .active {
           color: $color-primary;
           background-color: #fef7f4;
         }

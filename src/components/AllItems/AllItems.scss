@@ -3,6 +3,10 @@
 .all-items-block {
   margin-bottom: 40px;
 
+  .radius{
+    border-radius: 0 0 10px 10px;
+  }
+
   .all-items {
 
     .all-items__title {
@@ -92,30 +96,6 @@
           font-size: 22px;
           line-height: 27px;
           letter-spacing: 0.015em;
-        }
-
-        .pizza-card__button {
-          border: none;
-          height: 45px;
-          border-radius: 25px;
-          padding: 0 11px;
-          color: white;
-          background-color: $color-primary;
-
-        }
-
-        .active {
-          border: 1px solid $color-primary;
-          color: $color-primary;
-          background-color: white;
-        }
-
-        .pizza-card__button_amount {
-          display: inline-block;
-          padding: 5px 10px;
-          background-color: $color-primary;
-          border-radius: 50%;
-          color: white;
         }
       }
     }

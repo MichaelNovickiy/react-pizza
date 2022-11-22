@@ -1,5 +1,5 @@
-import Header from "../components/header";
-import CartEmpty from "../components/cart-empty";
+import Header from "../components/Header";
+import CartEmpty from "../components/CartEmpty";
 
 function OrderEmpty() {
     return (
