@@ -5,12 +5,12 @@ const SortDefault = ({sortList}) => {
     const [sortBy, setSortBy] = useState(0)
     const [showSortBy, setShowSortBy] = useState(false)
 
-    let sortTitle = sortList[sortBy]
+    let activeTitle = sortList[sortBy]
     const sortRef = useRef(null)
 
     const onShowSortBy = () => setShowSortBy(!showSortBy)
-    const selectSortBy = (sortBy) => {
-        setSortBy(sortBy)
+    const selectSortBy = (index) => {
+        setSortBy(index)
         setShowSortBy(false)
     }
 
@@ -29,7 +29,7 @@ const SortDefault = ({sortList}) => {
             <span className="sort-default__title"
                   onClick={onShowSortBy}
                   ref={sortRef}
-            >{sortTitle}</span>
+            >{activeTitle}</span>
 
             {showSortBy && <ul className="sort__popup">
                 {sortList.map((item, index) => {

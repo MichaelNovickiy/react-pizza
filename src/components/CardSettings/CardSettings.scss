@@ -10,12 +10,17 @@
   line-height: 17px;
   letter-spacing: 0.015em;
 
+  .disabled{
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
   &-dough {
     .active-dough {
       background-color: white;
     }
 
-    span {
+    li {
       display: inline-block;
       width: 130px;
       text-align: center;
@@ -38,7 +43,7 @@
       background-color: white;
     }
 
-    span {
+    li {
       display: inline-block;
       width: 85px;
       text-align: center;

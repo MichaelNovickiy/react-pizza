@@ -4,7 +4,6 @@ import SortBlock from "../components/SortBlock";
 import AllItems from "../components/AllItems";
 
 const Main = () => {
-
     const sortItems = ["Мясные", "Вегетарианская",
         "Гриль", "Острые", "Закрытые"]
 

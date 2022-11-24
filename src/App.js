@@ -1,16 +1,13 @@
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import Main from "./pages/main";
-import Order from "./pages/order";
-import OrderEmpty from "./pages/order-empty";
+import Cart from "./pages/cart";
+import CartEmpty from "./pages/cartEmpty";
 
 export default function App() {
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" exact element={<Main/>}/>
-                <Route path="/order" element={<Order/>}/>
-                <Route path="/empty" element={<OrderEmpty/>}/>
-            </Routes>
-        </BrowserRouter>
-    );
+        <Routes>
+            <Route path="/" exact element={<Main/>}/>
+            <Route path="/order" element={<Cart/>}/>
+            <Route path="/empty" element={<CartEmpty/>}/>
+        </Routes>);
 }

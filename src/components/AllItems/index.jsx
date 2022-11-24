@@ -1,72 +1,83 @@
-import React from "react";
+// import React, {useEffect, useState} from "react";
 import "./AllItems.scss";
 import "../../styles/basic.scss";
-import ButtonMain from "../Buttons/ButtonMain";
-import CardSettings from "../CardSettings";
+import PizzaCard from "./PizzaCard";
 
+// const AllItems = () => {
+//     const [pizzas, setPizzas] = useState([])
+//
+//     useEffect(() => {
+//         fetch("http://localhost:3000/db.json").then((res) => (res.json()))
+//             .then((res) => {
+//                 setPizzas(res.pizzas)
+//             })
+//     }, [])
+//
+//     return (
+//         <section className="all-items-block">
+//             <div className="container radius">
+//                 <div className="all-items">
+//                     <h2 className="all-items__title">
+//                         Все пиццы
+//                     </h2>
+//                     <div className="pizzas">
+//                         {
+//                             pizzas.map((item) => {
+//                                 return <PizzaCard key={item.id} {...item}/>
+//                             })
+//                         }
+//                     </div>
+//                 </div>
+//             </div>
+//         </section>
+//     );
+// };
+//
+// export default AllItems;
+//
 
-const AllItems = () => {
-    return (
-        <section className="all-items-block">
-            <div className="container radius">
-                <div className="all-items">
-                    <h2 className="all-items__title">
-                        Все пиццы
-                    </h2>
-                    <div className="pizzas">
-                        <div className="pizza-card">
-                            <div className="pizza-card__image">
-                                <img src={require("../../images/pizza-chiz.png")} alt="pizza"/>
-                            </div>
-                            <div className="pizza-card__title">Чизбургер-пицца</div>
-                            <CardSettings dough={'thin'} size={30}/>
-                            <div className="pizza-card__bottom-block">
-                                <div className="pizza-card__price">от 395 ₽</div>
-                                <ButtonMain/>
-                            </div>
+import React, {Component} from "react";
+import {connect} from "react-redux";
+import {getPizzas} from "../../redux/actions/pizzasActions";
+
+class AllItems extends Component {
+    componentDidMount() {
+        fetch("http://localhost:3000/db.json").then((res) => (res.json()))
+            .then((res) => {
+                this.setState(this.props.getPizzas(res.pizzas))
+            })
+    }
+
+    render() {
+        return (
+            <section className="all-items-block">
+                <div className="container radius">
+                    <div className="all-items">
+                        <h2 className="all-items__title">
+                            Все пиццы
+                        </h2>
+                        <div className="pizzas">
+                            {
+                                this.props.items.map((item) => {
+                                    return <PizzaCard key={item.id} {...item}/>
+                                })
+                            }
                         </div>
-
-                        <div className="pizza-card">
-                            <div className="pizza-card__image">
-                                <img src={require("../../images/pizza-cheese.png")} alt="pizza"/>
-                            </div>
-                            <div className="pizza-card__title">Сырная</div>
-                            <CardSettings dough={'traditional'} size={40}/>
-                            <div className="pizza-card__bottom-block">
-                                <div className="pizza-card__price">от 450 ₽</div>
-                                <ButtonMain/>
-                            </div>
-                        </div>
-
-                        <div className="pizza-card">
-                            <div className="pizza-card__image">
-                                <img src={require("../../images/pizza-shrimp.png")} alt="pizza"/>
-                            </div>
-                            <div className="pizza-card__title">Креветки по-азиатски</div>
-                            <CardSettings/>
-                            <div className="pizza-card__bottom-block">
-                                <div className="pizza-card__price">от 290 ₽</div>
-                                <ButtonMain active amount/>
-                            </div>
-                        </div>
-
-                        <div className="pizza-card">
-                            <div className="pizza-card__image">
-                                <img src={require("../../images/pizza-chicken.png")} alt="pizza"/>
-                            </div>
-                            <div className="pizza-card__title">Сырный цыпленок</div>
-                            <CardSettings/>
-                            <div className="pizza-card__bottom-block">
-                                <div className="pizza-card__price">от 330 ₽</div>
-                                <ButtonMain active amount/>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
-            </div>
-        </section>
-    );
-};
+            </section>
+        );
+    }
+}
 
-export default AllItems;
+
+const mapStateToProps = (state) => ({
+    items: state.pizzas.items,
+    // loading: state.pizzas.loading
+})
+
+const mapDispatchToProps = (dispatch) => ({
+    getPizzas: (items) => dispatch(getPizzas(items))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(AllItems);

@@ -2,7 +2,7 @@ import React from "react";
 import "./CartEmpty.scss";
 import "../../styles/basic.scss";
 
-const CartEmpty = () => {
+const CartEmptyBlock = () => {
     return (
         <section className="cart-is-empty-block">
             <div className="container">
@@ -24,4 +24,4 @@ const CartEmpty = () => {
     );
 };
 
-export default CartEmpty;
+export default CartEmptyBlock;

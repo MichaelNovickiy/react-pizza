@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 import CartBlock from "../components/CartBlock";
 
-function Order() {
+function Cart() {
     return (
         <div>
             <Header/>
@@ -10,4 +10,4 @@ function Order() {
     );
 }
 
-export default Order;
+export default Cart;
