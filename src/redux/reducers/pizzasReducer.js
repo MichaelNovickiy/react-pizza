@@ -1,6 +1,6 @@
 const pizzasInitial = {
     items: [],
-    loading: false
+    loading: true
 }
 
 export function pizzasReducer(state = pizzasInitial, action) {
@@ -9,6 +9,11 @@ export function pizzasReducer(state = pizzasInitial, action) {
             return {
                 ...state,
                 items: action.payload
+            }
+        case "SET_LOADING":
+            return {
+                ...state,
+                loading: action.payload
             }
         default:
             return state
