@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../components/Header";
-import SortBlock from "../components/SortBlock";
+import FilterBlock from "../components/FilterBlock";
 import AllItems from "../components/AllItems";
 
 const Main = () => {
@@ -10,7 +10,7 @@ const Main = () => {
     return (
         <div>
             <Header/>
-            <SortBlock sortItems={sortItems}/>
+            <FilterBlock sortItems={sortItems}/>
             <AllItems/>
         </div>
     );

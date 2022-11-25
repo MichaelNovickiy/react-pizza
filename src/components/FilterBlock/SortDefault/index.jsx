@@ -1,16 +1,20 @@
 import React, {useEffect, useRef, useState} from "react";
 import "./SortDefault.scss";
+import {useDispatch, useSelector} from "react-redux";
+import {setSort} from "../../../redux/actions/filtersActions";
 
 const SortDefault = ({sortList}) => {
-    const [sortBy, setSortBy] = useState(0)
+    const sort = useSelector(state => state.filters.sort)
+    const dispatch = useDispatch()
+
     const [showSortBy, setShowSortBy] = useState(false)
 
-    let activeTitle = sortList[sortBy]
+    const activeTitle = sortList.find((item) => item.type === sort.type).name
     const sortRef = useRef(null)
 
     const onShowSortBy = () => setShowSortBy(!showSortBy)
     const selectSortBy = (index) => {
-        setSortBy(index)
+        dispatch(setSort(sortList[index].type))
         setShowSortBy(false)
     }
 
@@ -34,9 +38,9 @@ const SortDefault = ({sortList}) => {
             {showSortBy && <ul className="sort__popup">
                 {sortList.map((item, index) => {
                     return <li key={index}
-                               className={sortBy === index ? "active" : ""}
+                               className={item.type === sort.type ? "active" : ""}
                                onClick={() => selectSortBy(index)}
-                    >{item}</li>
+                    >{item.name}</li>
                 })}
             </ul>}
         </div>
