@@ -1,15 +1,12 @@
-import React, {useState} from "react";
+import React from "react";
 import "./CardSettings.scss"
 
-const CardSettings = ({types, sizes}) => {
+const CardSettings = ({types, sizes, activeType, activeSize, setActiveType, setActiveSize, availableDoughs}) => {
 
-    const availableDoughs = ["тонкое", "традиционное"]
     const availableSizes = [26, 30, 40]
 
-    const [activeType, setActiveType] = useState(types[0])
     const selectType = (type) => setActiveType(type)
 
-    const [activeSize, setActiveSize] = useState(sizes[0])
     const selectSize = (size) => setActiveSize(size)
 
     return (
@@ -17,9 +14,9 @@ const CardSettings = ({types, sizes}) => {
             <ul className="card-settings-dough">
                 {availableDoughs.map((type, index) => {
                     return <li key={index}
-                                 className={`${activeType === index ? "active-dough" : ""}
+                               className={`${activeType === index ? "active-dough" : ""}
                                  ${!types.includes(index) && "disabled"}`}
-                                 onClick={() => selectType(index)}
+                               onClick={() => selectType(index)}
                     >{type}</li>
                 })}
             </ul>
@@ -27,9 +24,9 @@ const CardSettings = ({types, sizes}) => {
             <ul className="card-settings-size">
                 {availableSizes.map((size, index) => {
                     return <li key={index}
-                                 className={`${activeSize === size ? "active-size" : ""}
+                               className={`${activeSize === size ? "active-size" : ""}
                                  ${!sizes.includes(size) && "disabled"}`}
-                                 onClick={() => selectSize(size)}
+                               onClick={() => selectSize(size)}
                     >{size} см.</li>
                 })}
             </ul>
