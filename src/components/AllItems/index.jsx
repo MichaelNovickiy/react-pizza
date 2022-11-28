@@ -13,6 +13,7 @@ for (let i = 1; i <= 10; i++) {
 
 const AllItems = () => {
     const items = useSelector(state => state.pizzas.items)
+    const cartItems = useSelector(({ cart }) => cart.items);
     const loading = useSelector(state => state.pizzas.loading)
     const dispatch = useDispatch()
 
@@ -31,7 +32,10 @@ const AllItems = () => {
                             })
                             :
                             items.map((item) => {
-                                return <PizzaCard key={item.id} dispatch={dispatch} {...item}/>
+                                return <PizzaCard key={item.id}
+                                                  dispatch={dispatch}
+                                                  addedCount={cartItems[item.id] && cartItems[item.id].items.length}
+                                                  {...item}/>
                             })
                         }
                     </div>

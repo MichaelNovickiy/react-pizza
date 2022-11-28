@@ -21,10 +21,11 @@ const Header = () => {
                             <div className="header__subtitle">Cамая вкусная пицца во вселенной</div>
                         </div>
                     </div>
-                    <Link to="/order">
+                    <Link to={`${totalCount ? "/order" : "/empty"}`}>
                         <button className="header__button">
                             <span className="header__price">{totalPrice} ₽</span>
-                            <span className="header__cart"><i className="fa-solid fa-cart-shopping"> </i> {totalCount}</span>
+                            <span className="header__cart"><i
+                                className="fa-solid fa-cart-shopping"> </i> {totalCount}</span>
                         </button>
                     </Link>
                 </div>

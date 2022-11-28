@@ -1,96 +1,84 @@
 import React from "react";
 import "./CartBlock.scss";
 import "../../styles/basic.scss";
+import {useDispatch, useSelector} from "react-redux";
+import CartItem from "./CartItem";
+import {clearCart, minusCartItem, plusCartItem, removeCartItem} from "../../redux/actions/cartActions";
+import {Link} from "react-router-dom";
+import CartEmptyBlock from "../CartEmpty";
 
 const CartBlock = () => {
-    return (
-        <section className="cart-block">
-            <div className="container">
-                <div className="cart cart__container">
-                    <div className="cart__title-block">
-                        <div className="cart__title"><i className="fa-solid fa-cart-shopping"> </i>Корзина</div>
-                        <div className="cart__trash"><i className="fa-regular fa-trash-can"> </i>Очистить корзину</div>
-                    </div>
-                    <div className="cart-items">
-                        <div className="cart-item">
-                            <div className="width-block">
-                                <div className="cart-item__img">
-                                    <img src={require("../../images/pizza-chicken.png")} alt="pizza"/>
-                                </div>
-                                <div className="cart-item__title">
-                                    <h3>Сырный цыпленок</h3>
-                                    <span>тонкое тесто, 26 см.</span>
-                                </div>
-                            </div>
-                            <div className="cart-item__amount">
-                                <span>-</span>
-                                <span className="amount">3</span>
-                                <span>+</span>
-                            </div>
-                            <div className="cart-item__price">
-                                770 ₽
-                            </div>
-                            <div className="cart-item__remove">
-                                <span>&times;</span>
-                            </div>
-                        </div>
-                        <div className="cart-item">
-                            <div className="width-block">
-                                <div className="cart-item__img">
-                                    <img src={require("../../images/pizza-shrimp.png")} alt="pizza"/>
-                                </div>
-                                <div className="cart-item__title">
-                                    <h3>Креветки по-азиатски</h3>
-                                    <span>толстое тесто, 40 см.</span>
-                                </div>
-                            </div>
-                            <div className="cart-item__amount">
-                                <span>-</span>
-                                <span className="amount">1</span>
-                                <span>+</span>
-                            </div>
-                            <div className="cart-item__price">
-                                290 ₽
-                            </div>
-                            <div className="cart-item__remove">
-                                <span>&times;</span>
-                            </div>
-                        </div>
-                        <div className="cart-item">
-                            <div className="width-block">
-                                <div className="cart-item__img">
-                                    <img src={require("../../images/pizza-chiz.png")} alt="pizza"/>
-                                </div>
-                                <div className="cart-item__title">
-                                    <h3>Чизбургер-пицца</h3>
-                                    <span>тонкое тесто, 30 см.</span>
-                                </div>
-                            </div>
-                            <div className="cart-item__amount">
-                                <span>-</span>
-                                <span className="amount">2</span>
-                                <span>+</span>
-                            </div>
-                            <div className="cart-item__price">
-                                370 ₽
-                            </div>
-                            <div className="cart-item__remove">
-                                <span>&times;</span>
-                            </div>
-                        </div>
 
+    const {items, totalPrice, totalCount} = useSelector(({cart}) => (cart))
+    const dispatch = useDispatch()
+
+    const addedPizzas = Object.keys(items).map((key) => {
+        return items[key].items[0];
+    });
+
+    const onClearCart = () => {
+        if (window.confirm("Вы действительно хотите очистить корзину?")) {
+            dispatch(clearCart());
+        }
+    };
+
+    const onRemoveItem = (id) => {
+        if (window.confirm("Вы действительно хотите удалить?")) {
+            dispatch(removeCartItem(id));
+        }
+    };
+
+    const onPlusItem = (id) => {
+        dispatch(plusCartItem(id));
+    };
+
+    const onMinusItem = (id) => {
+        dispatch(minusCartItem(id));
+    };
+
+    const onClickOrder = () => {
+        alert(`Ваш заказ на сумму ${totalPrice} ₽ в колличестве пицц ${totalCount} скоро будет готов`);
+    };
+
+    return (<>
+            {totalCount
+                ?
+                <section className="cart-block">
+                    <div className="container">
+                        <div className="cart cart__container">
+                            <div className="cart__title-block">
+                                <div className="cart__title"><i className="fa-solid fa-cart-shopping"> </i>Корзина</div>
+                                <div className="cart__trash" onClick={onClearCart}>
+                                    <i className="fa-regular fa-trash-can"> </i>Очистить корзину
+                                </div>
+                            </div>
+                            {addedPizzas.map((obj) => {
+                                return <CartItem key={obj.id}
+                                                 totalPrice={items[obj.id].totalPrice}
+                                                 totalCount={items[obj.id].items.length}
+                                                 onRemoveItem={onRemoveItem}
+                                                 onPlusItem={onPlusItem}
+                                                 onMinusItem={onMinusItem}
+                                                 props={obj}/>
+                            })}
+                            <div className="cart-description">
+                                <div className="cart-description__amount">Всего пицц: <span>{totalCount} шт.</span>
+                                </div>
+                                <div className="cart-description__price">Сумма заказа: <span>{totalPrice} ₽</span></div>
+                            </div>
+                            <div className="cart-buttons">
+                                <Link to={"/"}>
+                                    <button className="cart-buttons_back"><span>&lsaquo;</span>Вернуться назад</button>
+                                </Link>
+                                <button className="cart-buttons_pay" onClick={onClickOrder}>Оплатить сейчас</button>
+                            </div>
+                        </div>
                     </div>
-                    <div className="cart-description">
-                        <div className="cart-description__amount">Всего пицц: <span>3 шт.</span></div>
-                        <div className="cart-description__price">Сумма заказа: <span>900 ₽</span></div>
-                    </div>
-                    <div className="cart-buttons">
-                        <button className="cart-buttons_back"><span>&lsaquo;</span>Вернуться назад</button>
-                        <button className="cart-buttons_pay">Оплатить сейчас</button>
-                    </div>
-                </div>
-            </div>
-        </section>
+                </section>
+                :
+                <CartEmptyBlock/>}
+        </>
+
     );
 };
 

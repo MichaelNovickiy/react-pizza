@@ -5,14 +5,14 @@
   height: 45px;
   border-radius: 30px;
   padding: 0 11px;
-  background-color: $color-primary;
-  color: white;
   -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
   transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  color: $color-primary;
+  background-color: white;
 
   &:hover {
-    box-shadow: 0 0 40px 40px white inset;
-    color: $color-primary;
+    box-shadow: 0 0 40px 40px $color-primary inset;
+    color: white;
   }
 
   .title {
@@ -27,16 +27,3 @@
     color: white;
   }
 }
-
-button.active {
-  color: $color-primary;
-  background-color: white;
-  -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
-  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
-
-  &:hover {
-    box-shadow: 0 0 40px 40px $color-primary inset;
-    color: white;
-  }
-}
-

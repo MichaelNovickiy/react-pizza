@@ -1,6 +1,7 @@
 import React from "react";
 import "./CartEmpty.scss";
 import "../../styles/basic.scss";
+import {Link} from "react-router-dom";
 
 const CartEmptyBlock = () => {
     return (
@@ -16,7 +17,9 @@ const CartEmptyBlock = () => {
                         <div className="cart-is-empty__img">
                             <img src={require("../../images/shopping-cart.png")} alt="pizza"/>
                         </div>
-                        <button className="cart-is-empty__back">Вернуться назад</button>
+                        <Link to={'/'}>
+                            <button className="cart-is-empty__back">Вернуться назад</button>
+                        </Link>
                     </div>
                 </div>
             </div>

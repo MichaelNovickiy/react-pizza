@@ -3,7 +3,7 @@ import "./PizzaCard.scss";
 import CardSettings from "../../CardSettings";
 import ButtonMain from "../../Buttons/ButtonMain";
 
-const PizzaCard = ({id, name, imageUrl, price, types, sizes, dispatch}) => {
+const PizzaCard = ({id, name, imageUrl, price, types, sizes, dispatch, addedCount}) => {
 
     const [activeType, setActiveType] = useState(types[0])
     const [activeSize, setActiveSize] = useState(sizes[0])
@@ -33,6 +33,7 @@ const PizzaCard = ({id, name, imageUrl, price, types, sizes, dispatch}) => {
                             sizes={sizes}
                             activeType={availableDoughs[activeType]}
                             activeSize={activeSize}
+                            addedCount={addedCount}
                 />
             </div>
         </div>
