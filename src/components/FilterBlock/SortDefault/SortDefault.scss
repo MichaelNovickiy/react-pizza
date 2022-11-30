@@ -3,6 +3,9 @@
 .sort-default {
   position: relative;
   width: 250px;
+  @media (max-width: 1130px) {
+    margin-bottom: 20px;
+  }
 
   i {
     vertical-align: middle;

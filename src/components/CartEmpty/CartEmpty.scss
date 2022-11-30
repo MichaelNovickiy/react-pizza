@@ -10,11 +10,18 @@
   .cart__container {
     width: 821px;
     margin: 0 auto;
+    @media (max-width: 821px) {
+      width: 100%;
+    }
 
     .cart-is-empty {
       width: 550px;
       margin: 0 auto;
       text-align: center;
+      @media (max-width: 600px) {
+        width: 100%;
+        padding: 0 30px;
+      }
 
       .cart-is-empty__title {
         margin-top: 50px;

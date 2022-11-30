@@ -9,9 +9,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: 1130px) {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
 
     .sort__buttons {
       display: flex;
+      @media (max-width: 1130px) {
+        width: 100%;
+        overflow: scroll;
+      }
 
       li {
         padding: 14px 25px;

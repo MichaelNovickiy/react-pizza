@@ -10,6 +10,10 @@
   letter-spacing: 0.01em;
   padding-top: 30px;
   position: relative;
+  @media (max-width: 760px) {
+    flex-direction: column;
+    align-items: center;
+  }
 
   &::before {
     content: "";
@@ -20,10 +24,13 @@
     background-color: $color-grey;
   }
 
-  .width-block {
-    width: 400px;
+  .title-width {
     display: flex;
     align-items: center;
+    width: 400px;
+    @media (max-width: 760px) {
+      width: auto;
+    }
 
     .cart-item__img {
       width: 80px;
@@ -41,41 +48,49 @@
     }
   }
 
-  .cart-item__amount {
-    span {
-      border: 1px solid $color-primary;
-      color: $color-primary;
-      height: 30px;
-      width: 30px;
-      display: inline-block;
-      border-radius: 50%;
-      text-align: center;
-      cursor: pointer;
-      vertical-align: middle;
+  .buttons-width {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    justify-content: space-between;
+    margin: 10px;
+
+    .cart-item__amount {
+      span {
+        border: 1px solid $color-primary;
+        color: $color-primary;
+        height: 30px;
+        width: 30px;
+        display: inline-block;
+        border-radius: 50%;
+        text-align: center;
+        cursor: pointer;
+        vertical-align: middle;
+      }
+
+      .amount {
+        border: none;
+        color: inherit;
+        margin: 0 10px;
+        cursor: auto;
+        display: inline-block;
+        width: 12px;
+      }
     }
 
-    .amount {
-      border: none;
-      color: inherit;
-      margin: 0 10px;
-      cursor: auto;
-      display: inline-block;
-      width: 12px;
-    }
-  }
-
-  .cart-item__remove {
-    span {
-      border: 1px solid #8D8D8D;
-      color: #8D8D8D;
-      height: 30px;
-      width: 30px;
-      display: inline-block;
-      border-radius: 50%;
-      text-align: center;
-      cursor: pointer;
-      vertical-align: middle;
-      padding-top: 1px;
+    .cart-item__remove {
+      span {
+        border: 1px solid #8D8D8D;
+        color: #8D8D8D;
+        height: 30px;
+        width: 30px;
+        display: inline-block;
+        border-radius: 50%;
+        text-align: center;
+        cursor: pointer;
+        vertical-align: middle;
+        padding-top: 1px;
+      }
     }
   }
 }
