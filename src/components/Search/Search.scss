@@ -1,0 +1,22 @@
+@import "./src/styles/variables";
+
+.search-block {
+  padding-top: 20px;
+  margin: 0 auto;
+  position: relative;
+  width: 250px;
+
+  .search {
+    border: 1px solid #777777;
+    padding: 10px 10px 10px 30px;
+    border-radius: 10px;
+    width: 250px;
+  }
+
+  i {
+    position: absolute;
+    bottom: 13px;
+    left: 10px;
+    color: #777777;
+  }
+}

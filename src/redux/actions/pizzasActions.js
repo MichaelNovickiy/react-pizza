@@ -8,8 +8,9 @@ export const setLoading = (value) => ({
     payload: value
 })
 
-export const fetchPizzas = (category, sort) => (dispatch) => {
-    fetch(`/pizzas?${category !== null ? `category=${category}` : ""}&_sort=${sort.type}&_order=${sort.order}`)
+export const fetchPizzas = (category, sort, search) => (dispatch) => {
+    console.log(search)
+    fetch(`https://6319cac38e51a64d2bec7366.mockapi.io/pizzas?${category !== null ? `category=${category}` : ""}&sortBy=${sort.type}&order=${sort.order}&search=${search}`)
         .then((res) => (res.json()))
         .then((res) => {
             dispatch(getPizzas(res))

@@ -10,10 +10,11 @@ export default function App() {
     const dispatch = useDispatch()
     const category = useSelector(state => state.filters.category)
     const sort = useSelector(state => state.filters.sort)
+    const search = useSelector(state => state.search.searchInput)
 
     useEffect(() => {
-        dispatch(fetchPizzas(category, sort))
-    }, [category, sort])
+        dispatch(fetchPizzas(category, sort, search))
+    }, [category, sort, search])
 
     return (
         <Routes>
