@@ -19,11 +19,14 @@ const SortDefault = ({sortList}) => {
     }
 
     useEffect(() => {
-        document.body.addEventListener("click", (e) => {
+        const handleClickOutside = (e) => {
             if (!e.path.includes(sortRef.current)) {
                 setShowSortBy(false)
             }
-        })
+        }
+
+        document.body.addEventListener("click", handleClickOutside)
+        return () => (document.body.removeEventListener('click', handleClickOutside))
     }, [])
 
     return (
