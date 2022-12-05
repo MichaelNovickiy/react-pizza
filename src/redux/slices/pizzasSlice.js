@@ -2,7 +2,8 @@ import {createSlice} from '@reduxjs/toolkit'
 
 const initialState = {
     items: [],
-    loading: true
+    loading: true,
+    activePage: 1,
 }
 
 export const pizzasSlice = createSlice({
@@ -15,11 +16,14 @@ export const pizzasSlice = createSlice({
         setLoading: (state, action) => {
             state.loading = action.payload
         },
+        setActivePage: (state, action) => {
+            state.activePage = action.payload
+        }
     },
 })
 
-export const fetchPizzas = (category, sort, search) => (dispatch) => {
-    fetch(`https://6319cac38e51a64d2bec7366.mockapi.io/pizzas?${category !== null ? `category=${category}` : ""}&sortBy=${sort.type}&order=${sort.order}&search=${search}`)
+export const fetchPizzas = (category, sort, search, activePage) => (dispatch) => {
+    fetch(`https://6319cac38e51a64d2bec7366.mockapi.io/pizzas?page=${activePage}&limit=4${category !== null ? `category=${category}` : ""}&sortBy=${sort.type}&order=${sort.order}&search=${search}`)
         .then((res) => (res.json()))
         .then((res) => {
             dispatch(getPizzas(res))
@@ -27,6 +31,8 @@ export const fetchPizzas = (category, sort, search) => (dispatch) => {
         })
 }
 
-export const {getPizzas, setLoading} = pizzasSlice.actions
+export const {getPizzas, setLoading, setActivePage} = pizzasSlice.actions
+
+export const selectActivePage = (state) => state.pizzas.activePage
 
 export default pizzasSlice.reducer

@@ -3,7 +3,7 @@ import ContentLoader from "react-content-loader";
 
 const Loader = () => {
     return (
-        <ContentLoader style={{margin: "30px 12px 0"}}
+        <ContentLoader style={{margin: "30px 12px 73px"}}
                        speed={2}
                        width={280}
                        height={460}

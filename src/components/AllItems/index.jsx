@@ -4,9 +4,10 @@ import "../../styles/basic.scss";
 import PizzaCard from "./PizzaCard";
 import {useDispatch, useSelector} from "react-redux";
 import Loader from "./Loader";
+import Paginator from "../Paginator";
 
 const arr = []
-for (let i = 1; i <= 10; i++) {
+for (let i = 1; i <= 4; i++) {
     arr.push(i);
 }
 
@@ -40,6 +41,7 @@ const AllItems = () => {
                         }
                     </div>
                 </div>
+                <Paginator/>
             </div>
         </section>
     );
