@@ -3,13 +3,14 @@ import Main from "./pages/main";
 import Cart from "./pages/cart";
 import CartEmpty from "./pages/cartEmpty";
 import {useEffect} from "react";
-import {fetchPizzas} from "./redux/actions/pizzasActions";
 import {useDispatch, useSelector} from "react-redux";
+import {selectCategory, selectSort} from "./redux/slices/filtersSlice";
+import {fetchPizzas} from "./redux/slices/pizzasSlice";
 
 export default function App() {
     const dispatch = useDispatch()
-    const category = useSelector(state => state.filters.category)
-    const sort = useSelector(state => state.filters.sort)
+    const category = useSelector(selectCategory)
+    const sort = useSelector(selectSort)
     const search = useSelector(state => state.search.searchInput)
 
     useEffect(() => {

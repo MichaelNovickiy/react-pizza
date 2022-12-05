@@ -1,10 +1,10 @@
 import React, {useEffect, useRef, useState} from "react";
 import "./SortDefault.scss";
 import {useDispatch, useSelector} from "react-redux";
-import {setSort} from "../../../redux/actions/filtersActions";
+import {selectSort, setSort} from "../../../redux/slices/filtersSlice";
 
 const SortDefault = ({sortList}) => {
-    const sort = useSelector(state => state.filters.sort)
+    const sort = useSelector(selectSort)
     const dispatch = useDispatch()
 
     const [showSortBy, setShowSortBy] = useState(false)

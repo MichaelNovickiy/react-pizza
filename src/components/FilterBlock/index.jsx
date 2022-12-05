@@ -3,10 +3,10 @@ import "./FilterBlock.scss";
 import "../../styles/basic.scss";
 import SortDefault from "./SortDefault";
 import {useDispatch, useSelector} from "react-redux";
-import {setCategory} from "../../redux/actions/filtersActions";
+import {selectCategory, setCategory} from "../../redux/slices/filtersSlice";
 
 const FilterBlock = ({sortItems}) => {
-    const category = useSelector(state => state.filters.category)
+    const category = useSelector(selectCategory)
     const dispatch = useDispatch()
 
     const setSort = (index) => {

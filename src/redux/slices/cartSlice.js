@@ -1,3 +1,5 @@
+import {createSlice} from '@reduxjs/toolkit'
+
 const initialState = {
     items: {},
     totalPrice: 0,
@@ -20,9 +22,11 @@ const getTotalSum = (obj, path) => {
     }, 0);
 };
 
-export const cartReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case 'ADD_PIZZA_TO_CART': {
+export const cartSlice = createSlice({
+    name: 'cart',
+    initialState,
+    reducers: {
+        addPizzaToCart: (state, action) => {
             const currentPizzaItems = !state.items[action.payload.id]
                 ? [action.payload]
                 : [...state.items[action.payload.id].items, action.payload];
@@ -44,9 +48,8 @@ export const cartReducer = (state = initialState, action) => {
                 totalCount,
                 totalPrice,
             };
-        }
-
-        case 'REMOVE_CART_ITEM': {
+        },
+        removeCartItem: (state, action) => {
             const newItems = {
                 ...state.items,
             };
@@ -59,9 +62,8 @@ export const cartReducer = (state = initialState, action) => {
                 totalPrice: state.totalPrice - currentTotalPrice,
                 totalCount: state.totalCount - currentTotalCount,
             };
-        }
-
-        case 'PLUS_CART_ITEM': {
+        },
+        plusCartItem: (state, action) => {
             const newObjItems = [
                 ...state.items[action.payload].items,
                 state.items[action.payload].items[0],
@@ -83,9 +85,8 @@ export const cartReducer = (state = initialState, action) => {
                 totalCount,
                 totalPrice,
             };
-        }
-
-        case 'MINUS_CART_ITEM': {
+        },
+        minusCartItem: (state, action) => {
             const oldItems = state.items[action.payload].items;
             const newObjItems =
                 oldItems.length > 1 ? state.items[action.payload].items.slice(1) : oldItems;
@@ -106,12 +107,15 @@ export const cartReducer = (state = initialState, action) => {
                 totalCount,
                 totalPrice,
             };
+        },
+        clearCart: (state) => {
+            state.totalPrice = 0;
+            state.totalCount = 0;
+            state.items = {}
         }
-
-        case 'CLEAR_CART':
-            return { totalPrice: 0, totalCount: 0, items: {} };
-
-        default:
-            return state;
     }
-};
+})
+
+export const {addPizzaToCart, removeCartItem, plusCartItem, minusCartItem, clearCart} = cartSlice.actions
+
+export default cartSlice.reducer

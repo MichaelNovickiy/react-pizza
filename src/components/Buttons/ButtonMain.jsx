@@ -1,7 +1,7 @@
 import React from "react";
 import "./ButtonMain.scss";
 import "../../styles/basic.scss";
-import {addPizzaToCart} from "../../redux/actions/cartActions";
+import {addPizzaToCart} from "../../redux/slices/cartSlice";
 
 const ButtonMain = ({dispatch, id, name, imageUrl, price, activeType, activeSize, addedCount}) => {
 

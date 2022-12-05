@@ -3,9 +3,9 @@ import "./CartBlock.scss";
 import "../../styles/basic.scss";
 import {useDispatch, useSelector} from "react-redux";
 import CartItem from "./CartItem";
-import {clearCart, minusCartItem, plusCartItem, removeCartItem} from "../../redux/actions/cartActions";
 import {Link} from "react-router-dom";
 import CartEmptyBlock from "../CartEmpty";
+import {clearCart, minusCartItem, plusCartItem, removeCartItem} from "../../redux/slices/cartSlice";
 
 const CartBlock = () => {
 
