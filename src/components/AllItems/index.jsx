@@ -3,13 +3,13 @@ import "./AllItems.scss";
 import "../../styles/basic.scss";
 import PizzaCard from "./PizzaCard";
 import {useDispatch, useSelector} from "react-redux";
-import Loader from "./Loader";
+import Loader from "./Loaders/Skeletons";
 import Paginator from "../Paginator";
 import {selectItems, selectLoading} from "../../redux/slices/pizzasSlice";
 import {selectCartItems} from "../../redux/slices/cartSlice";
 
 const arr = []
-for (let i = 1; i <= 4; i++) {
+for (let i = 1; i <= 8; i++) {
     arr.push(i);
 }
 

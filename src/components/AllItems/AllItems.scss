@@ -18,7 +18,7 @@
     .pizzas {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(1, 1fr);
+      grid-template-rows: repeat(2, 1fr);
       justify-items: center;
       @media (max-width: 1320px) {
         grid-template-columns: repeat(3, 1fr);
@@ -37,9 +37,9 @@
         margin-top: 17px;
 
         .pizza-card__price {
-          font-weight: 700;
-          font-size: 22px;
-          line-height: 27px;
+          font-weight: 600;
+          font-size: 20px;
+          line-height: 24px;
           letter-spacing: 0.015em;
         }
       }

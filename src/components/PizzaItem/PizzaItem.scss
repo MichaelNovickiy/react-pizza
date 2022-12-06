@@ -1,0 +1,58 @@
+@import "./src/styles/variables";
+
+.pizzaBlock_radius{
+  border-radius: 10px;
+}
+
+.pizzaBlock {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+
+
+  h2 {
+    font-size: 30px;
+    font-weight: 600;
+    padding-top: 50px;
+  }
+
+  img {
+    display: block;
+    width: 45%;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+
+  h4 {
+    font-size: 22px;
+    font-weight: 600;
+    padding-top: 20px;
+  }
+
+  .link {
+    padding: 20px 0 40px;
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+  }
+
+  button {
+    font-size: 14px;
+    height: 45px;
+    border-radius: 25px;
+    padding: 0 20px;
+    color: white;
+    background-color: $color-primary;
+  }
+
+  .cart-buttons_back {
+    border: 1px solid #8D8D8D;
+    background-color: inherit;
+    color: #8D8D8D;
+
+    span {
+      margin-right: 5px;
+    }
+  }
+}
+

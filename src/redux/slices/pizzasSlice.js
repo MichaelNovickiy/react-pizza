@@ -23,7 +23,7 @@ export const pizzasSlice = createSlice({
 })
 
 export const fetchPizzas = (category, sort, search, activePage) => (dispatch) => {
-    fetch(`https://6319cac38e51a64d2bec7366.mockapi.io/pizzas?page=${activePage}&limit=4${category !== null ? `category=${category}` : ""}&sortBy=${sort.type}&order=${sort.order}&search=${search}`)
+    fetch(`https://6319cac38e51a64d2bec7366.mockapi.io/pizzas?page=${activePage}&limit=8&${category !== null ? `category=${category}` : ""}&sortBy=${sort.type}&order=${sort.order}&search=${search}`)
         .then((res) => (res.json()))
         .then((res) => {
             dispatch(getPizzas(res))

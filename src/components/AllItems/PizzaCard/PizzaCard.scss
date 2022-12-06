@@ -6,14 +6,22 @@
   padding-bottom: 35px;
 
   .pizza-card__image {
+    position: relative;
     margin: 0 auto;
+    margin-left: 5%;
     width: 260px;
     height: 260px;
+    top: 0;
+    transition: top 150ms ease-out 0s;
+
+    &:hover {
+      top: 5px;
+    }
   }
 
   .pizza-card__title {
     margin-top: 11px;
-    font-weight: 800;
+    font-weight: 600;
     font-size: 19px;
     line-height: 24px;
     letter-spacing: 0.01em;
