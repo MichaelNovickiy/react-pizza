@@ -5,18 +5,20 @@ import PizzaCard from "./PizzaCard";
 import {useDispatch, useSelector} from "react-redux";
 import Loader from "./Loader";
 import Paginator from "../Paginator";
+import {selectItems, selectLoading} from "../../redux/slices/pizzasSlice";
+import {selectCartItems} from "../../redux/slices/cartSlice";
 
 const arr = []
 for (let i = 1; i <= 4; i++) {
     arr.push(i);
 }
 
-
 const AllItems = () => {
-    const items = useSelector(state => state.pizzas.items)
-    const cartItems = useSelector(({ cart }) => cart.items);
-    const loading = useSelector(state => state.pizzas.loading)
+    const items = useSelector(selectItems)
+    const cartItems = useSelector(selectCartItems);
+    const loading = useSelector(selectLoading)
     const dispatch = useDispatch()
+
 
     return (
         <section className="all-items-block">

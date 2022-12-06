@@ -12,6 +12,8 @@ const CartBlock = () => {
     const {items, totalPrice, totalCount} = useSelector(({cart}) => (cart))
     const dispatch = useDispatch()
 
+    console.log(items)
+
     const addedPizzas = Object.keys(items).map((key) => {
         return items[key].items[0];
     });

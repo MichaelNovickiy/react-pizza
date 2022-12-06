@@ -42,12 +42,16 @@ export const cartSlice = createSlice({
             const totalCount = getTotalSum(newItems, 'items.length');
             const totalPrice = getTotalSum(newItems, 'totalPrice');
 
-            return {
+            const cartData = {
                 ...state,
                 items: newItems,
                 totalCount,
                 totalPrice,
-            };
+            }
+
+            localStorage.setItem('cartItems', JSON.stringify(cartData))
+
+            return cartData;
         },
         removeCartItem: (state, action) => {
             const newItems = {
@@ -56,12 +60,17 @@ export const cartSlice = createSlice({
             const currentTotalPrice = newItems[action.payload].totalPrice;
             const currentTotalCount = newItems[action.payload].items.length;
             delete newItems[action.payload];
-            return {
+
+            const cartData = {
                 ...state,
                 items: newItems,
                 totalPrice: state.totalPrice - currentTotalPrice,
                 totalCount: state.totalCount - currentTotalCount,
-            };
+            }
+
+            localStorage.setItem('cartItems', JSON.stringify(cartData))
+
+            return cartData;
         },
         plusCartItem: (state, action) => {
             const newObjItems = [
@@ -112,10 +121,19 @@ export const cartSlice = createSlice({
             state.totalPrice = 0;
             state.totalCount = 0;
             state.items = {}
+
+            localStorage.removeItem('cartItems')
+        },
+        fetchCartData: (state, action) => {
+            state.items = action.payload.items
+            state.totalPrice = action.payload.totalPrice
+            state.totalCount = action.payload.totalCount
         }
     }
 })
 
-export const {addPizzaToCart, removeCartItem, plusCartItem, minusCartItem, clearCart} = cartSlice.actions
+export const {addPizzaToCart, removeCartItem, plusCartItem, minusCartItem, clearCart, fetchCartData} = cartSlice.actions
+
+export const selectCartItems = (state) => state.cart.items
 
 export default cartSlice.reducer

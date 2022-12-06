@@ -4,9 +4,7 @@ import "./CardSettings.scss"
 const CardSettings = ({types, sizes, activeType, activeSize, setActiveType, setActiveSize, availableDoughs}) => {
 
     const availableSizes = [26, 30, 40]
-
     const selectType = (type) => setActiveType(type)
-
     const selectSize = (size) => setActiveSize(size)
 
     return (

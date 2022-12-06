@@ -6,6 +6,7 @@ import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {selectCategory, selectSort} from "./redux/slices/filtersSlice";
 import {fetchPizzas, selectActivePage} from "./redux/slices/pizzasSlice";
+import {fetchCartData} from "./redux/slices/cartSlice";
 
 export default function App() {
     const dispatch = useDispatch()
@@ -17,6 +18,13 @@ export default function App() {
     useEffect(() => {
         dispatch(fetchPizzas(category, sort, search, activePage))
     }, [category, sort, search, activePage])
+
+    useEffect(() => {
+        const cartItems = JSON.parse(localStorage.getItem('cartItems'));
+        if (cartItems) {
+            dispatch(fetchCartData(cartItems));
+        }
+    }, []);
 
     return (
         <Routes>

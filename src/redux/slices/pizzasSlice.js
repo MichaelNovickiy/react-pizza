@@ -34,5 +34,7 @@ export const fetchPizzas = (category, sort, search, activePage) => (dispatch) =>
 export const {getPizzas, setLoading, setActivePage} = pizzasSlice.actions
 
 export const selectActivePage = (state) => state.pizzas.activePage
+export const selectItems = (state) => state.pizzas.items
+export const selectLoading = (state) => state.pizzas.loading
 
 export default pizzasSlice.reducer
