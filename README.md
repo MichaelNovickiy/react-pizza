@@ -1,10 +1,13 @@
-## https://shop-pizza-react.herokuapp.com/
+### [https://shop-pizza-react.herokuapp.com/](https://shop-pizza-react.herokuapp.com/)
 
-Stack:
+# **Stack**:
 
 * ReactJS + hooks
+* Redux (Toolkit)
 * React Router
-* Redux
 * Redux thunk
-* Json-server
+* SCSS
+* Pagination
+* Json-server (mockAPI)
+* Lodash.Debounce
 * Fetch method for getting data from server

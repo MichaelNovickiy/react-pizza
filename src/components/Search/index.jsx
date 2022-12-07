@@ -16,7 +16,7 @@ const Search = () => {
     const updateSearchInput = useCallback(
         debounce((value) => {
             dispatch(setSearchInput(value))
-        }, 300), [dispatch, setSearchInput])
+        }, 300), [setSearchInput])
 
     return (
         <div className="container">
