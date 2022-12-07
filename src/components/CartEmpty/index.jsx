@@ -17,7 +17,7 @@ const CartEmptyBlock = () => {
                         <div className="cart-is-empty__img">
                             <img src={require("../../images/shopping-cart.png")} alt="pizza"/>
                         </div>
-                        <Link to={'/'}>
+                        <Link to={process.env.PUBLIC_URL + '/'}>
                             <button className="cart-is-empty__back">Вернуться назад</button>
                         </Link>
                     </div>

@@ -69,7 +69,7 @@ const CartBlock = () => {
                                 <div className="cart-description__price">Сумма заказа: <span>{totalPrice} ₽</span></div>
                             </div>
                             <div className="cart-buttons">
-                                <Link to={"/"}>
+                                <Link to={process.env.PUBLIC_URL +"/"}>
                                     <button className="cart-buttons_back"><span>&lsaquo;</span>Вернуться назад</button>
                                 </Link>
                                 <button className="cart-buttons_pay" onClick={onClickOrder}>Оплатить сейчас</button>

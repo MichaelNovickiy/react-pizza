@@ -1,4 +1,4 @@
-### [https://shop-pizza-react.herokuapp.com/](https://shop-pizza-react.herokuapp.com/)
+### [https://michaelnovickiy.github.io/react-pizza/](https://michaelnovickiy.github.io/react-pizza/)
 
 # **Stack**:
 

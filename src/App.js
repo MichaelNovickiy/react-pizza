@@ -1,12 +1,12 @@
 import {Route, Routes} from 'react-router-dom';
-import Main from "./pages/main";
-import Cart from "./pages/cart";
-import CartEmpty from "./pages/cartEmpty";
-import {useEffect} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {selectCategory, selectSort} from "./redux/slices/filtersSlice";
-import {fetchPizzas, selectActivePage} from "./redux/slices/pizzasSlice";
-import {fetchCartData} from "./redux/slices/cartSlice";
+import Main from './pages/main';
+import Cart from './pages/cart';
+import CartEmpty from './pages/cartEmpty';
+import {useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {selectCategory, selectSort} from './redux/slices/filtersSlice';
+import {fetchPizzas, selectActivePage} from './redux/slices/pizzasSlice';
+import {fetchCartData} from './redux/slices/cartSlice';
 import PizzaItem from './components/PizzaItem';
 
 export default function App() {
@@ -29,9 +29,9 @@ export default function App() {
 
     return (
         <Routes>
-            <Route path="/" exact element={<Main/>}/>
-            <Route path="/order" element={<Cart/>}/>
-            <Route path="/empty" element={<CartEmpty/>}/>
-            <Route path="/pizza/:id" element={<PizzaItem/>}/>
+            <Route path={process.env.PUBLIC_URL + '/'} exact element={<Main/>}/>
+            <Route path={process.env.PUBLIC_URL + '/order'} element={<Cart/>}/>
+            <Route path={process.env.PUBLIC_URL + '/empty'} element={<CartEmpty/>}/>
+            <Route path={process.env.PUBLIC_URL + '/pizza/:id'} element={<PizzaItem/>}/>
         </Routes>);
 }

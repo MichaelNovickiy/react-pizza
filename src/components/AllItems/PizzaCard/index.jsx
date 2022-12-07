@@ -13,7 +13,7 @@ const PizzaCard = ({id, name, imageUrl, price, types, sizes, dispatch, addedCoun
 
     return (
             <div className="pizza-card">
-                <Link to={`/pizza/${id}`}>
+                <Link to={process.env.PUBLIC_URL +`/pizza/${id}`}>
                     <div className="pizza-card__image">
                         <img src={imageUrl} alt="pizza"/>
                     </div>

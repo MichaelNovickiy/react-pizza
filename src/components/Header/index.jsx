@@ -1,8 +1,8 @@
-import React from "react";
-import "./Header.scss";
-import "../../styles/basic.scss";
-import {Link} from "react-router-dom";
-import {useSelector} from "react-redux";
+import React from 'react';
+import './Header.scss';
+import '../../styles/basic.scss';
+import {Link} from 'react-router-dom';
+import {useSelector} from 'react-redux';
 
 const Header = () => {
     const {totalCount, totalPrice} = useSelector(state => state.cart)
@@ -12,8 +12,8 @@ const Header = () => {
             <div className="container header_radius">
                 <div className="header">
                     <div className="header__title-block">
-                        <Link to="/">
-                            <div className="header__logo"> </div>
+                        <Link to={process.env.PUBLIC_URL + '/'}>
+                            <div className="header__logo"></div>
                         </Link>
 
                         <div>
@@ -21,7 +21,7 @@ const Header = () => {
                             <div className="header__subtitle">Cамая вкусная пицца во вселенной</div>
                         </div>
                     </div>
-                    <Link to={`${totalCount ? "/order" : "/empty"}`}>
+                    <Link to={process.env.PUBLIC_URL + `${totalCount ? '/order' : '/empty'}`}>
                         <button className="header__button">
                             <span className="header__price">{totalPrice} $</span>
                             <span className="header__cart"><i

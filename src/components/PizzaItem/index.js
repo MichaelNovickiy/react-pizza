@@ -28,7 +28,7 @@ const PizzaItem = () => {
                         {<img src={item.imageUrl} alt="pizza"/>}
                         <p>{item.description}</p>
                         <h4>от {item.price} $</h4>
-                        <Link to={'/'} className="link">
+                        <Link to={process.env.PUBLIC_URL + '/'} className="link">
                             <button className="cart-buttons_back"><span>&lsaquo;</span>Вернуться назад</button>
                         </Link>
                     </div>
